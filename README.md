@@ -68,7 +68,7 @@ If you want, and I higly recomend, you can save the SEO in the database.
 ### Migrate the seo table
 
 ``` php
-php artisan migrate --package=claudiusnascimento/seo
+php artisan migrate --path=vendor/claudiusnascimento/seo/database/migrations
 ```
 
 ### In your edit model view, put the follow html
