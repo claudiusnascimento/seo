@@ -17,33 +17,8 @@ class Seo extends Model {
                         'twitter_title', 'twitter_image', 'twitter_description'
                     ];
 
-
-    public function getAttr($attr)
-    {
-        return empty($this->{$attr}) ? config('seo.defaults.' . $attr) : $this->{$attr};
-    }
-
     public function getOgTypeAttribute($value)
     {
-        return $value != '' ?: 'website';
+        return empty($value) ? 'website' : $value;
     }
-
-    public function getOgImageAttribute($value)
-    {
-
-        return preg_replace($this->getChangeDomainPattern(), 'www.veyron.com.br', $value);
-    }
-
-    public function getOgUrlAttribute($value)
-    {
-
-        return preg_replace($this->getChangeDomainPattern(), 'www.veyron.com.br', $value);
-    }
-
-    public function getChangeDomainPattern()
-    {
-        return '/localhost:8888\/path\/to\/project\/public/m';
-    }
-
-
 }

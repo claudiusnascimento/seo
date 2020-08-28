@@ -10,9 +10,11 @@ trait SeoTrait {
     {
         $model_relation = $this->_getSeoRelation();
 
-        $seo = Seo::whereRel($model_relation)->whereRelId($this->id)->first();
+        $keyName = $this->getKeyName();
 
-        $model_id = $this->id;
+        $seo = Seo::whereRel($model_relation)->whereRelId($this->{$keyName})->first();
+
+        $model_id = $this->{$keyName};
 
         return view('seo::form', compact(['seo', 'model_relation', 'model_id']));
     }

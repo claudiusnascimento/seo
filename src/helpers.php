@@ -9,6 +9,7 @@ if (! function_exists('seo_form_builder')) {
         $html .= '<label for="'.$name.'">'.$label.'</label>';
 
         $value = get_seo_attr_value($name, $model);
+
         $html .= '<input class="form-control" name="'.$name.'" type="text" value="'.$value.'">';
 
         return $html . '</div>';
