@@ -1,11 +1,11 @@
 <?php
 
-namespace Claudiusnascimento\Seo;
+namespace ClaudiusNascimento\Seo;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Claudiusnascimento\Seo\Skeleton\SkeletonClass
+ * @see \ClaudiusNascimento\Seo\Skeleton\SkeletonClass
  */
 class SeoFacade extends Facade
 {

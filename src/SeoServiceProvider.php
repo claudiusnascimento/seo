@@ -1,6 +1,6 @@
 <?php
 
-namespace Claudiusnascimento\Seo;
+namespace ClaudiusNascimento\Seo;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,24 +15,27 @@ class SeoServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seo');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'seo');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'seo');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this->registerHelpers();
 
         if ($this->app->runningInConsole()) {
+
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('seo.php'),
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/seo'),
-            ], 'views');*/
+            ], 'views');
 
             // Publishing assets.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor/seo'),
-            ], 'assets');*/
+            ], 'assets');
 
             // Publishing the translation files.
             /*$this->publishes([
@@ -56,5 +59,17 @@ class SeoServiceProvider extends ServiceProvider
         $this->app->singleton('seo', function () {
             return new Seo;
         });
+    }
+
+    /**
+     * Register helpers file
+     */
+    private function registerHelpers()
+    {
+        // Load the helpers in app/Http/helpers.php
+        if (file_exists($helper = __DIR__ . '/helpers.php'))
+        {
+            require $helper;
+        }
     }
 }

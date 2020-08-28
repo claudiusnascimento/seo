@@ -1,9 +1,9 @@
 <?php
 
-namespace Claudiusnascimento\Seo\Tests;
+namespace ClaudiusNascimento\Seo\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Claudiusnascimento\Seo\SeoServiceProvider;
+use ClaudiusNascimento\Seo\SeoServiceProvider;
 
 class ExampleTest extends TestCase
 {
@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
     {
         return [SeoServiceProvider::class];
     }
-    
+
     /** @test */
     public function true_is_true()
     {

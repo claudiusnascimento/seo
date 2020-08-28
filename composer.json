@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.0",
         "illuminate/support": "^6.0"
     },
     "require-dev": {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Claudiusnascimento\\Seo\\": "src"
+            "ClaudiusNascimento\\Seo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Claudiusnascimento\\Seo\\Tests\\": "tests"
+            "ClaudiusNascimento\\Seo\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Claudiusnascimento\\Seo\\SeoServiceProvider"
+                "ClaudiusNascimento\\Seo\\SeoServiceProvider"
             ],
             "aliases": {
-                "Seo": "Claudiusnascimento\\Seo\\SeoFacade"
+                "Seo": "ClaudiusNascimento\\Seo\\SeoFacade"
             }
         }
     }
