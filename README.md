@@ -7,7 +7,7 @@ As the title says, this package config the Search Engine Optimization in your la
 You can install the package via composer:
 
 ```bash
-composer require claudiusnascimento/seo
+composer require claudiusnascimento/seo:0.1.1
 ```
 
 ### Add SeoServiceProvider in config\app.php service providers array
